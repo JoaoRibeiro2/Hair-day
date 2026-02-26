@@ -4,14 +4,18 @@ import { hoursClick } from "./hours-click.js"
 
 const hours = document.getElementById("hours")
 export function hoursLoad({date}){
+// Limpa a lista de horários
+
+hours.innerHTML = ""
+
   const opening = openingHours.map((hour) => {
     const [scheduleHour]  = hour.split(":")
-    console.log(scheduleHour)
+    // console.log(scheduleHour)
     
     // Adiciona a hora na date e verificar se está no passado
     
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs())
-    console.log(isHourPast)
+    // console.log(isHourPast)
 
     // Define se o horário está disponível
 
